@@ -2,6 +2,7 @@ import 'package:finetrack/core/theme/app_colors.dart';
 import 'package:finetrack/core/theme/app_text_styles.dart';
 import 'package:finetrack/core/widgets/empty_state.dart';
 import 'package:finetrack/core/widgets/loading_skeleton.dart';
+import 'package:finetrack/features/chatbotai/screens/chat_screen.dart';
 import 'package:finetrack/features/dashboard/models/dashboard_model.dart';
 import 'package:finetrack/features/dashboard/services/dashboard_service.dart';
 import 'package:finetrack/features/dashboard/widgets/dashboard_header.dart';
@@ -59,6 +60,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
+      /////////////cahtbot button
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const ChatScreen()),
+          );
+        },
+        icon: const Icon(Icons.smart_toy),
+        label: const Text("AI"),
+      ),
+      ///////////////////
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
