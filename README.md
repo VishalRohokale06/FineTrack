@@ -1,22 +1,41 @@
 # FinTrack — AI Powered Personal Finance Management App
 
-FinTrack is a full-stack personal finance management application that helps users track expenses, manage budgets, monitor income, and gain AI-powered financial insights through analytics and smart reporting.
+FinTrack is a full-stack personal finance management application that helps users track expenses, manage budgets, monitor income, and receive AI-powered financial recommendations through intelligent analytics and personalized financial insights.
 
 ---
 
 ## Features
 
+### Core Finance Features
+
 * Secure JWT Authentication & Authorization
-* Expense & Income Tracking
-* Budget Management
-* AI-Based Spending Insights
-* Financial Analytics Dashboard
+* Expense Tracking & Management
+* Income Tracking & Management
+* Budget Planning & Monitoring
 * Recurring Expense Automation
-* Push Notifications
+* Category-Based Expense Analysis
+* Financial Analytics Dashboard
+* Smart Budget Alerts
 * PDF Financial Reports
+
+### AI Features
+
+* AI Personal Finance Advisor
+* Spring AI + Ollama (Llama 3) Integration
+* Personalized Financial Recommendations
+* Context-Aware AI Responses Based on User Data
+* Spending Analysis & Savings Suggestions
+* Budget-Aware Financial Guidance
+* AI Financial Health Insights
+
+### Additional Features
+
 * Responsive Flutter UI
 * REST API Integration
-* Dark Mode Support
+* Pull-to-Refresh Dashboard
+* Modern Analytics Visualizations
+* Cross-Platform Support (Android, Web, Desktop)
+* Dockerized Backend Deployment
 
 ---
 
@@ -36,8 +55,23 @@ FinTrack is a full-stack personal finance management application that helps user
 * Spring Boot
 * Spring Security
 * JWT Authentication
+* Spring AI
 * Hibernate / JPA
 * PostgreSQL
+
+## AI & Machine Learning
+
+* Ollama
+* Llama 3
+* Spring AI Chat Client
+* Personalized Financial Context Engine
+
+## DevOps
+
+* Docker
+* Docker Compose
+* Git
+* GitHub
 
 ---
 
@@ -46,38 +80,47 @@ FinTrack is a full-stack personal finance management application that helps user
 ```text
 FinTrack/
 │
-├── finetrack_frontend/
+├── finetrackfrontend/
 │   ├── lib/
 │   ├── assets/
-│   ├── pubspec.yaml
+│   └── pubspec.yaml
 │
-├── finetrack_backend/
+├── finetrackbackend/
 │   ├── src/
-│   ├── pom.xml
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   └── pom.xml
 │
 └── README.md
 ```
 
 ---
 
-# Screenshots -> assets/screenshots
+# Screenshots
 
-## Authentication Screens
+## Authentication
 
 * Login Screen
-* Register Screen
+* Registration Screen
 
 ## Dashboard
 
-* Analytics Dashboard
-* Expense Overview
+* Financial Overview
+* Income & Expense Summary
+* Spending Analytics
 * Budget Tracking
 
 ## Expense Management
 
 * Add Expense
 * Expense History
-* Category Insights
+* Category Analysis
+
+## AI Financial Advisor
+
+* AI Chat Interface
+* Personalized Financial Suggestions
+* Budget & Savings Recommendations
 
 ---
 
@@ -86,7 +129,7 @@ FinTrack/
 ## Frontend Setup
 
 ```bash
-cd finetrack_frontend
+cd finetrackfrontend
 flutter pub get
 flutter run
 ```
@@ -94,8 +137,30 @@ flutter run
 ## Backend Setup
 
 ```bash
-cd finetrack_backend
+cd finetrackbackend
 mvn spring-boot:run
+```
+
+---
+
+# Docker Setup
+
+Build and run the backend using Docker:
+
+```bash
+docker-compose up --build
+```
+
+Run in detached mode:
+
+```bash
+docker-compose up -d
+```
+
+Stop containers:
+
+```bash
+docker-compose down
 ```
 
 ---
@@ -111,27 +176,58 @@ spring.datasource.password=your_password
 
 jwt.secret=your_secret_key
 jwt.expiration=86400000
+
+spring.ai.ollama.base-url=http://localhost:11434
+spring.ai.ollama.chat.options.model=llama3
 ```
 
 ---
 
 # API Features
 
-* User Authentication APIs
+* Authentication APIs
 * Expense Management APIs
-* Budget APIs
+* Income Management APIs
+* Budget Management APIs
 * Dashboard Analytics APIs
-* AI Insights APIs
+* AI Chatbot APIs
+* Financial Insight APIs
+
+---
+
+# AI Personal Finance Advisor
+
+The AI Advisor uses Spring AI and Ollama (Llama 3) to provide personalized financial recommendations.
+
+Examples:
+
+* How can I save more money?
+* Where am I overspending?
+* Can I afford a ₹15,000 phone this month?
+* How much should I save next month?
+* Which category is consuming most of my income?
+
+The AI analyzes:
+
+* User Income
+* User Expenses
+* Savings
+* Budget Status
+* Spending Categories
+
+to generate context-aware financial guidance.
 
 ---
 
 # Future Improvements
 
 * AI Expense Prediction
-* Multi-Device Synchronization
-* Cloud Backup
-* Voice Expense Entry
-* Advanced Financial Reports
+* Financial Health Score
+* AI Monthly Financial Reports
+* Investment Suggestions
+* Voice-Based Expense Entry
+* Cloud Synchronization
+* Multi-Device Support
 
 ---
 
@@ -139,8 +235,9 @@ jwt.expiration=86400000
 
 ## Vishal Rohokale
 
-* Java & Spring Boot Developer
-* Flutter Developer
 * Full Stack Developer
+* Flutter Developer
+* Java & Spring Boot Developer
 
-GitHub: https://github.com/VishalRohokale06
+GitHub:
+https://github.com/VishalRohokale06
